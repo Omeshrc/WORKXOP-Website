@@ -1,0 +1,26 @@
+.button-m {
+    display: inline-block;
+    margin: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-white);
+    border: 3px solid var(--color-phthalo-blue);
+    background-image: linear-gradient(30deg, var(--color-aqua-blue) 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+}
+
+.button-m:hover {
+    background-position: 100%;
+    background-color: var(--color-powder-blue);
+    color: var(--color-aqua-blue);
+}
+
+.button-m:active {
+    transform: scale(0.96)
+}
