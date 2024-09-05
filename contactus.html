@@ -231,41 +231,79 @@
       </footer>
     </div>
 
-    <!-- Notification and Script -->
+    <!-- Notification Div -->
     <div id="notification" class="notification"></div>
+
+    <
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "AZhRwYUKZ02QbHb4r",
+        });
+      })();
+    </script>
+
+    <!-- Form Submission Script -->
     <script>
-      document.getElementById("sendBtn").addEventListener("click", function () {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-        const notification = document.getElementById("notification");
+      document
+        .getElementById("sendBtn")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent form from submitting normally
 
-        if (name && email && message) {
-          notification.textContent = `Thank you, ${name}! Your message has been sent.`;
-          notification.classList.remove("error");
-          notification.classList.add("success");
-          notification.style.display = "block";
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
 
-          // Hide notification after 3 seconds
-          setTimeout(() => {
-            notification.style.display = "none";
-          }, 3000);
+          if (name && email && message) {
+            // Prepare the email template parameters
+            const templateParams = {
+              from_name: name,
+              from_email: email,
+              message: message,
+            };
 
-          // Reset form after sending
+            // Send the email using EmailJS
+            emailjs
+              .send("service_6ml12q9", "template_7zey5rs", templateParams) // Replace these with your real IDs
+              .then(
+                function (response) {
+                  console.log("SUCCESS!", response.status, response.text);
+                  alert("Your message has been sent!");
+                  document.getElementById("contactForm").reset();
+                },
+                function (error) {
+                  console.error("FAILED...", error);
+                  alert("Failed to send your message. Please try again later.");
+                }
+              );
+          } else {
+            alert("Please fill in all fields before sending.");
+          }
+        });
+
+      // Send the email using EmailJS
+      async function handleFormSubmit() {
+        try {
+          const response = await emailjs.send(
+            "service_6ml12q9",
+            "template_7zey5rs",
+            templateParams
+          );
+
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Your message has been sent!");
           document.getElementById("contactForm").reset();
-        } else {
-          notification.textContent =
-            "Please fill in all fields before sending.";
-          notification.classList.remove("success");
-          notification.classList.add("error");
-          notification.style.display = "block";
-
-          // Hide notification after 3 seconds
-          setTimeout(() => {
-            notification.style.display = "none";
-          }, 3000);
+        } catch (error) {
+          console.error("FAILED...", error);
+          alert("Failed to send your message. Please try again later.");
         }
-      });
+      }
+
+      handleFormSubmit(); // Call the async function
     </script>
   </body>
 </html>
