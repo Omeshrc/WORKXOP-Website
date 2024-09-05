@@ -261,8 +261,8 @@
           if (name && email && message) {
             // Prepare the email template parameters
             const templateParams = {
-              from_name: name,
-              from_email: email,
+              name: name,
+              email: email,
               message: message,
             };
 
@@ -284,26 +284,6 @@
             alert("Please fill in all fields before sending.");
           }
         });
-
-      // Send the email using EmailJS
-      async function handleFormSubmit() {
-        try {
-          const response = await emailjs.send(
-            "service_6ml12q9",
-            "template_7zey5rs",
-            templateParams
-          );
-
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Your message has been sent!");
-          document.getElementById("contactForm").reset();
-        } catch (error) {
-          console.error("FAILED...", error);
-          alert("Failed to send your message. Please try again later.");
-        }
-      }
-
-      handleFormSubmit(); // Call the async function
     </script>
   </body>
 </html>
