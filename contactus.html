@@ -12,24 +12,25 @@
     <link rel="icon" href="assets/logos/title-icon.png" type="image/png" />
   </head>
   <body>
+    <!-- Header Section -->
     <header class="header">
-      <a href="index.html"
-        ><img
+      <a href="index.html">
+        <img
           src="assets/logos/workxop-logo-removebg-preview.png"
           alt="logo"
           class="logo"
         />
       </a>
-
       <nav class="navbar">
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
           <h3>
-            Choose a Workxop <img src="assets/icons/icons8-down-arrow-50.png" />
+            Choose a Workxop
+            <img src="assets/icons/icons8-down-arrow-50.png" alt="dropdown" />
           </h3>
           <div class="dropdown-content">
-            <a href="ourworkshops.html#social-dancing-for-absolute-beginners">
-              Social Dancing for Absolute Beginners</a
+            <a href="ourworkshops.html#social-dancing-for-absolute-beginners"
+              >Social Dancing for Absolute Beginners</a
             >
             <a href="ourworkshops.html#cooking">Ready, Set Cook!</a>
             <a href="ourworkshops.html#poetry-night">Poetry Night</a>
@@ -43,10 +44,11 @@
       </nav>
     </header>
 
+    <!-- Main Section -->
     <div class="image-container">
       <img
         src="assets/common-media/home-page-beach.jpg"
-        alt="bgthumbnailgif"
+        alt="background"
         class="thumbnail-image"
         style="height: 25%"
       />
@@ -95,20 +97,18 @@
       </div>
     </div>
 
+    <!-- Footer Section -->
     <div class="blue-line"><br /></div>
-
-    <!--FOOTER-->
     <div class="footer">
       <div class="footer-links">
         <div class="contact-us-box">
           <img
             src="assets/logos/workxop-logo-removebg-preview.png"
-            alt="workxop-logo-removebg-preview"
+            alt="workxop-logo"
             class="logo"
           />
 
-          <!-- Wrap both icon-text and useful-links inside a common flex container -->
-
+          <!-- Contact Information -->
           <div class="addresses">
             <a href="https://maps.app.goo.gl/gwPQTN178uT5TD4b8">
               <div class="icon-text">
@@ -134,6 +134,8 @@
               </div>
             </a>
           </div>
+
+          <!-- Social Media Links -->
           <div class="social-media-container">
             <a href="https://www.instagram.com/work_xop" target="_blank">
               <img
@@ -168,10 +170,10 @@
             </a>
           </div>
 
-          <!-- Move useful-links inside the contact-us-box -->
+          <!-- Useful Links -->
           <div class="useful-links">
             <div class="footer-right">
-              <h2 style="text-align: left">Useful Links</h2>
+              <h2>Useful Links</h2>
               <ol>
                 <li>
                   <a href="index.html">
@@ -216,6 +218,7 @@
       </div>
     </div>
 
+    <!-- Footer Credits -->
     <div class="developer-bar-footer">
       <footer>
         &copy; 2024, WORKXOP | Designed by
@@ -228,16 +231,16 @@
       </footer>
     </div>
 
+    <!-- Notification and Script -->
+    <div id="notification" class="notification"></div>
     <script>
       document.getElementById("sendBtn").addEventListener("click", function () {
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
-
         const notification = document.getElementById("notification");
 
         if (name && email && message) {
-          // Simulating the email sending process
           notification.textContent = `Thank you, ${name}! Your message has been sent.`;
           notification.classList.remove("error");
           notification.classList.add("success");

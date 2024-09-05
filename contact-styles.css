@@ -21,13 +21,16 @@
 
 body {
   align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--color-powder-blue); /* Optional background color */
 }
 
 .contact-form-container {
   position: absolute;
-  top: 10%;
+  top: 15%; /* Moves the form up or down on the page */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Centers the form horizontally */
   z-index: 1;
   padding: 2rem;
   border-radius: 8px;
@@ -56,7 +59,6 @@ label {
 .indicate {
   font-style: italic;
   font-size: 10px;
-  right: 0;
   color: black;
   text-align: left;
 }
@@ -108,53 +110,17 @@ button[type="reset"]:hover {
   top: 130px;
   right: 20px;
   padding: 15px;
-  background-color: #f44336;
+  background-color: #f44336; /* Red background for error */
+  color: white;
   border-radius: 5px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
 .notification.success {
-  background-color: #4caf50;
+  background-color: #4caf50; /* Green background for success */
 }
 
 .notification.error {
-  background-color: #f44336;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .description-card-paragraph,
-  .about-us-des {
-    margin: 0;
-    padding: 20px;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .program-image,
-  .about-us-des {
-    margin-left: 0;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .useful-links {
-    margin-left: 0;
-    text-align: center;
-  }
+  background-color: #f44336; /* Red background for error */
 }
