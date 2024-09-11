@@ -1,26 +1,52 @@
+:root {
+  --color-phthalo-blue: rgb(0, 13, 129);
+  --color-lavender: rgb(210, 218, 239);
+  --color-night: rgb(18, 19, 15);
+  --color-powder-blue: #138b91;
+  --color-white: rgba(255, 255, 255, 0.969);
+  --color-aqua-blue: #5bc5d2;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark-gray: #333333;
+  --color-orange: #f28e1a;
+  --color-bright-green: #a3ed29;
+  --color-neon-yellow: #fbff2e;
+  --color-hot-pink: #ff1d9c;
+  --color-midnight-blue: #3a3e4e;
+  --color-peach: #ffab48;
+  --color-slate-gray: #575b70;
+  --color-dark-teal: #003e58;
+  --color-cave-water-blue: #002637;
+}
+
 .button-m {
-    display: inline-block;
-    margin: 30px;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--color-white);
-    border: 3px solid var(--color-phthalo-blue);
-    background-image: linear-gradient(30deg, var(--color-aqua-blue) 50%, transparent 50%);
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: 0%;
-    -webkit-transition: background 300ms ease-in-out;
-    transition: background 300ms ease-in-out;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  background-image: linear-gradient(
+    30deg,
+    var(--color-aqua-blue) 50%,
+    transparent 50%
+  );
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 400ms ease-in-out;
+  transition: background 400ms ease-in-out;
 }
 
 .button-m:hover {
-    background-position: 100%;
-    background-color: var(--color-powder-blue);
-    color: var(--color-aqua-blue);
+  background-position: 100%;
+  background-color: var(--color-dark-teal);
+  color: var(--color-white);
 }
 
 .button-m:active {
-    transform: scale(0.96)
+  transform: scale(0.96);
 }

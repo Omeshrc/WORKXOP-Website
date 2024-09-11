@@ -129,11 +129,12 @@ video {
 
 .description-card {
   position: relative;
+  z-index: 0;
   width: 100%;
   display: flex;
   align-items: center;
   color: var(--color-white);
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 

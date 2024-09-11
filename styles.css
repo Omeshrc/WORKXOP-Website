@@ -62,12 +62,11 @@ h3 {
 .nav-dropdown {
   position: relative;
   display: inline-block;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .dropdown-content a {
   font-size: 18px;
-  z-index: 1000;
 }
 
 .dropdown-content {
@@ -76,7 +75,7 @@ h3 {
   position: absolute;
   background-color: rgb(218, 218, 218);
   min-width: 160px;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .dropdown-content a {
@@ -84,7 +83,7 @@ h3 {
   padding: 10px;
   text-decoration: none;
   display: block;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .dropdown-content a:hover {
@@ -94,12 +93,11 @@ h3 {
 
 .nav-dropdown:hover .dropdown-content {
   display: block;
-  z-index: 1000;
 }
 
 .navbar {
   padding: 15px;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .navbar a::before {
