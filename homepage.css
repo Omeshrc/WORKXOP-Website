@@ -72,6 +72,7 @@
 }
 
 .thumbnail-image {
+  height: 25%;
   width: 100%;
   object-fit: fill;
   filter: brightness(50%);

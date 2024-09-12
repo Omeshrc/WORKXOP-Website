@@ -51,56 +51,57 @@
       </nav>
     </header>
 
-    <!-- Main Section -->
-    <div class="image-container">
+    <div id="notification" class="notification"></div>
+
+    <div class="contact-image-container">
       <img
         src="assets/common-media/home-page-beach.jpg"
         alt="background"
         class="thumbnail-image"
-        style="height: 25%"
       />
+      <div class="contact-form-overlay">
+        <div class="contact-form-container">
+          <form id="contactForm">
+            <h2>Contact Us</h2>
 
-      <div class="contact-form-container">
-        <form id="contactForm">
-          <h2>Contact Us</h2>
+            <label for="name">Full Name<span class="star">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name..."
+              required
+            />
 
-          <label for="name">Full Name<span class="star">*</span></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name..."
-            required
-          />
+            <label for="email">Email<span class="star">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email ..."
+              required
+            />
 
-          <label for="email">Email<span class="star">*</span></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email ..."
-            required
-          />
+            <label for="message">Message<span class="star">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              required
+            ></textarea>
 
-          <label for="message">Message<span class="star">*</span></label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Your message..."
-            required
-          ></textarea>
+            <label class="indicate">
+              <span class="star">*</span> All fields indicated with a star are
+              required.
+            </label>
 
-          <label class="indicate">
-            <span class="star">*</span> All fields indicated with a star are
-            required.
-          </label>
-
-          <div class="button-container">
-            <button type="button" id="sendBtn">Send</button>
-            <button type="reset">Reset</button>
-          </div>
-        </form>
+            <div class="button-container">
+              <button type="button" id="sendBtn">Send</button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -176,7 +177,7 @@
               />
             </a>
           </div>
-
+          <br />
           <!-- Useful Links -->
           <div class="useful-links">
             <div class="footer-right">
@@ -238,14 +239,11 @@
       </footer>
     </div>
 
-    <!-- Notification Div -->
-    <div id="notification" class="notification"></div>
-
-    <
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+
     <script type="text/javascript">
       (function () {
         emailjs.init({
@@ -256,6 +254,30 @@
 
     <!-- Form Submission Script -->
     <script>
+      // Function to show notifications
+      function showNotification(message, type) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+
+        // Set the notification type (success or error)
+        notification.className = "notification show";
+        if (type === "success") {
+          notification.classList.add("success");
+        } else if (type === "error") {
+          notification.classList.add("error");
+        }
+
+        // Automatically hide the notification after 3 seconds
+        setTimeout(() => {
+          notification.className = "notification"; // Hide notification
+
+          // Redirect to home page if the notification is a success
+          if (type === "success") {
+            window.location.href = "index.html"; // Redirect to the home page
+          }
+        }, 1500);
+      }
+
       document
         .getElementById("sendBtn")
         .addEventListener("click", function (event) {
@@ -265,7 +287,18 @@
           const email = document.getElementById("email").value;
           const message = document.getElementById("message").value;
 
-          if (name && email && message) {
+          // Regular Expression to validate email format
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          // Check if all fields are filled and the email is in proper format
+          if (!name || !email || !message) {
+            showNotification(
+              "Please fill in all fields before sending.",
+              "error"
+            );
+          } else if (!emailPattern.test(email)) {
+            showNotification("Please enter a valid email address.", "error");
+          } else {
             // Prepare the email template parameters
             const templateParams = {
               name: name,
@@ -279,16 +312,17 @@
               .then(
                 function (response) {
                   console.log("SUCCESS!", response.status, response.text);
-                  alert("Your message has been sent!");
+                  showNotification("Your message has been sent!", "success");
                   document.getElementById("contactForm").reset();
                 },
                 function (error) {
                   console.error("FAILED...", error);
-                  alert("Failed to send your message. Please try again later.");
+                  showNotification(
+                    "Failed to send your message. Please try again later.",
+                    "error"
+                  );
                 }
               );
-          } else {
-            alert("Please fill in all fields before sending.");
           }
         });
     </script>
