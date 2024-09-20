@@ -3,9 +3,9 @@ const header = document.querySelector(".header");
 
 // Function to toggle the navbar
 function toggleNavbar() {
-  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelector(".nav-links"); // Targeting nav-links instead of navbar
   const hamburger = document.querySelector(".hamburger");
-  navbar.classList.toggle("active");
+  navLinks.classList.toggle("active");
   hamburger.classList.toggle("active");
 }
 
