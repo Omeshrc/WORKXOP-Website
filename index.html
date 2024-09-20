@@ -21,10 +21,13 @@
       </a>
 
       <nav class="navbar">
-        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <div class="nav-dropdown">
           <h3>
-            Choose a Workxop <img src="assets/icons/icons8-down-arrow-50.png" />
+            <a href="ourworkshops.html">
+              Choose a Workxop
+              <img src="assets/icons/icons8-down-arrow-50.png" />
+            </a>
           </h3>
           <div class="dropdown-content">
             <a href="ourworkshops.html#social-dancing-for-absolute-beginners"
@@ -47,13 +50,14 @@
         </div>
         <a href="contactus.html">Contact Us</a>
       </nav>
+      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
     </header>
 
     <div class="image-container">
       <div class="description-image" style="background-color: #04070a">
         <video style="filter: brightness(40%)" width="100%" autoplay loop muted>
           <source
-            src="assets/common-media//hero-section-video.mp4"
+            src="assets/common-media/hero-section-video.mp4"
             type="video/mp4"
           />
         </video>
@@ -69,20 +73,10 @@
 
     <div class="blue-line"><br /></div>
 
-    <div class="description-card" style="background-color: #2b2c31">
-      <div class="description-card-paragraph">
-        <h1>WELCOME TO WORKXOP!</h1>
-        <p>
-          Welcome to WORKXOP, your gateway to the cultural and artistic heart of
-          Negombo. We are <span class="blue">passionate</span> advocates for
-          preserving and promoting cultural richness, committed to creating
-          <span class="orange">experiences</span> that enrich the lives of both
-          locals and visitors.
-        </p>
-      </div>
-    </div>
-
-    <div class="description-image" style="background-color: #04070a">
+    <div
+      class="description-image"
+      style="background-color: #04070a; position: relative"
+    >
       <video
         style="filter: brightness(30%)"
         width="100%"
@@ -96,10 +90,18 @@
           type="video/mp4"
         />
       </video>
-    </div>
 
-    <div class="description-card" style="background-color: #2b2c31">
-      <div class="description-card-paragraph">
+      <!-- Text overlay -->
+      <div class="text-overlay">
+        <h1>WELCOME TO WORKXOP!</h1>
+        <p>
+          Welcome to WORKXOP, your gateway to the cultural and artistic heart of
+          Negombo. We are <span class="blue">passionate</span> advocates for
+          preserving and promoting cultural richness, committed to creating
+          <span class="orange">experiences</span>
+          that enrich the lives of both locals and visitors.
+        </p>
+        <br />
         <p>
           At WORKXOP, we have developed a unique initiative through
           <span class="green">Development Media Network (Pvt.)Ltd.</span>, aimed
@@ -128,13 +130,13 @@
 
     <div
       class="description-image"
-      style="background-color: #8c6901; filter: brightness(100%)"
+      style="background-color: #8c6901; filter: brightness(100%); height: 400px"
     >
       <img
         src="assets/common-media/sunset.jpg"
         alt="sunset.jpg"
         class="description-image"
-        style="left: 0%"
+        style="left: 0%; height: 400px"
       />
     </div>
 
@@ -214,7 +216,7 @@
           <!-- Wrap both icon-text and useful-links inside a common flex container -->
 
           <div class="addresses">
-            <a href="https://maps.app.goo.gl/gwPQTN178uT5TD4b8">
+            <a href="https://maps.app.goo.gl/6AEJkkYzztDQX74L8" target="_blank">
               <div class="icon-text">
                 <img
                   class="social-media-icons"

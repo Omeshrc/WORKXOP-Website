@@ -17,6 +17,7 @@
   --color-slate-gray: #575b70;
   --color-dark-teal: #003e58;
   --color-cave-water-blue: #002637;
+  font-size: 16px;
 }
 
 .about-us {
@@ -53,12 +54,14 @@
 .header {
   top: 0;
   left: 0;
+  z-index: 1000;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   padding: 20px 50px;
   background-color: var(--color-white);
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between; /* Aligns labels to the right */
   align-items: center;
   transition: transform 0.3s;
 }
@@ -82,21 +85,20 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 350px;
-  height: auto;
+  height: 640px;
 }
 .description-image img,
 video {
   display: block;
   margin: 0;
-  width: 100%;
-  height: 600px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .content-overlay {
   position: absolute;
-  top: 12%;
+  top: 4%;
   left: 7%;
   width: 100%;
   height: 100%;
@@ -107,23 +109,23 @@ video {
 }
 
 .hero-section {
-  font-size: 64px;
+  font-size: 50px;
   position: absolute;
-  text-align: justify;
+  text-align: left;
   top: 35%;
   color: var(--color-white);
   z-index: 1;
 }
 
 .hero-section p {
-  font-size: 22px;
+  font-size: clamp(14px, 2vw, 20px);
   padding-top: 20px;
   font-style: italic;
+  text-align: left;
 }
 
 .hero-section h6 {
-  font-size: 42px;
-  top: 40%;
+  font-size: 30px;
   color: #5bc5d2;
   font-weight: 1000;
 }
@@ -139,22 +141,18 @@ video {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.description-card-paragraph {
+.description-card-paragraph p {
   text-align: justify;
   display: block;
   width: 100%;
   margin-left: 5%;
-  padding: 50px 92px 50px 50px;
-  line-height: 1;
-  font-weight: 600;
-}
-.description-card-paragraph p {
-  text-align: justify;
-  display: block;
-  margin-left: 5%;
   padding: 35px 180px 20px 50px;
   font-size: 20px;
   font-weight: normal;
+}
+
+.description-card-paragraph h1 {
+  padding: 35px 180px 20px 50px;
 }
 
 .blue-line {
@@ -214,6 +212,10 @@ video {
   height: auto;
 }
 
+.hamburger {
+  display: none;
+}
+
 /* DESCRIPTION CARD COLORS*/
 .blue {
   color: #5bc5d2;
@@ -241,41 +243,4 @@ video {
   color: #ff1d9c;
   font-style: italic;
   font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .description-card-paragraph,
-  .about-us-des {
-    margin: 0;
-    padding: 20px;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .program-image,
-  .about-us-des {
-    margin-left: 0;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .useful-links {
-    margin-left: 0;
-    text-align: center;
-  }
 }

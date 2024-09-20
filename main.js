@@ -1,44 +1,40 @@
 let lastScrollPos = 0;
 const header = document.querySelector(".header");
 
-// TEST for rendering issues where dropdown doesn't appear properly
-// window.onload = function () {
-//   // Force a reflow
-//   document.body.style.display = "none";
-//   document.body.offsetHeight;
-//   document.body.style.display = "";
-// };
+// Function to toggle the navbar
+function toggleNavbar() {
+  const navbar = document.querySelector(".navbar");
+  const hamburger = document.querySelector(".hamburger");
+  navbar.classList.toggle("active");
+  hamburger.classList.toggle("active");
+}
 
+// Ensure the hamburger element exists before adding the event listener
+const hamburger = document.querySelector(".hamburger");
+if (hamburger) {
+  hamburger.addEventListener("click", toggleNavbar);
+}
+
+// Function to handle scroll behavior
 window.addEventListener("scroll", () => {
-  // get the current scroll position from the top of the page
   const currentScrollPos = window.scrollY;
-
-  if (currentScrollPos > lastScrollPos) {
-    // hide the header when scrolling down
-    header.style.transform = "translateY(-100%)";
-  } else {
-    // show the header when scrolling up
-    header.style.transform = "translateY(0)";
-  }
-
+  header.style.transform =
+    currentScrollPos > lastScrollPos ? "translateY(-100%)" : "translateY(0)";
   lastScrollPos = currentScrollPos;
 });
 
+// Function to handle clickable divs
 const clickableDivs = document.querySelectorAll(".clickable-div");
-
 clickableDivs.forEach((div) => {
   div.addEventListener("click", function () {
-    // get the utl from the data-url
     const url = this.getAttribute("data-url");
-
-    // navigate to the url
     window.location.href = url;
   });
 });
 
+// Function to construct email body
 function constructEmailBody(event) {
   event.preventDefault();
-
   const rating = document.querySelector('input[name="rating"]:checked').value;
   const reason = document.getElementById("reason").value;
   const reccomend = document.querySelector(
@@ -48,18 +44,16 @@ function constructEmailBody(event) {
   const preference = document.getElementById("preference").value;
 
   const emailBody = `Rating: ${rating}\nReason: ${reason}\nRecommendation: ${reccomend}\nWebsite visit: ${visit}\nPreference: ${preference}\n`;
-
   const form = document.querySelector("form");
   form.action = `mailto:minoshanj@gmail.com?subject=User%20Details&body=${encodeURIComponent(
     emailBody
   )}`;
 
-  // call the openPopup
   openPopup();
-
   form.submit();
 }
 
+// Popup functions
 let popup = document.getElementById("popup");
 let overlay = document.getElementById("overlay");
 
@@ -73,10 +67,9 @@ function closePopup() {
   overlay.style.visibility = "hidden";
 }
 
+// Form validation
 function validateForm(event) {
   event.preventDefault();
-
-  // reset any previous error messages
   document.getElementById("ratingError").style.display = "none";
   document.getElementById("reccomendError").style.display = "none";
   document.getElementById("reasonError").style.display = "none";
@@ -106,25 +99,21 @@ function validateForm(event) {
     return;
   }
 
-  // if all passes, submit the form
   constructEmailBody(event);
 }
 
+// Scroll to top function
 function scrollToTop() {
-  // scrolls the page to top
-  window.scrollTo(250, 250);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Set active link in side navbar
 const links = document.querySelectorAll(".side-navbar a");
 
 function setActiveLink() {
   const currentLink = window.location.hash;
   links.forEach((link) => {
-    if (link.getAttribute("href") === currentLink) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    link.classList.toggle("active", link.getAttribute("href") === currentLink);
   });
 }
 
@@ -132,6 +121,6 @@ setActiveLink();
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
-    setTimeout(setActiveLink, 10); // delay the update to make sure the hash changes
+    setTimeout(setActiveLink, 10);
   });
 });
