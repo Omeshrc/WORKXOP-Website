@@ -100,24 +100,28 @@ video {
   max-width: 100%;
   height: 650px;
   object-fit: cover;
+  filter: brightness(30%);
+  width: 100%;
 }
 
 .content-overlay {
   position: absolute;
   top: 4%;
-  left: 7%;
+  left: 0%;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-start;
   color: white;
+  padding-left: clamp(20px, 5vw, 50px); /* Adds 50% gap from the left */
 }
 
 .hero-section {
-  font-size: clamp(30px, 5vw, 50px); /* Responsive hero text */
+  font-size: clamp(30px, 6vw, 80px); /* Responsive hero text */
   position: absolute;
   text-align: left;
   top: 35%;
+  left: 11.5%;
   color: var(--color-white);
 }
 
@@ -138,10 +142,86 @@ video {
   position: relative;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
   align-items: center;
   color: var(--color-white);
   transition: transform 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.description-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.our-vision-mission {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 6.5%;
+}
+
+.vision-container p {
+  margin-left: 1%;
+}
+
+.vision-container,
+.mission-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.vision-container h1,
+.mission-container h1 {
+  min-width: 150px;
+  margin-right: 40px;
+  white-space: nowrap;
+}
+
+.vision-container p,
+.mission-container p {
+  flex: 1;
+}
+
+.first-image img {
+  max-width: 300px;
+  height: auto;
+  border: 3px solid #138b91;
+}
+
+.second-image img {
+  max-width: 300px;
+  height: auto;
+  border: 3px solid #138b91;
+}
+
+.description-card-paragraph {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.description-card-heading {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  margin-top: 10%;
+  padding: clamp(20px, 3vw, 50px);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center; /* Centers the text itself */
 }
 
 .description-card-paragraph p {
@@ -152,6 +232,7 @@ video {
 
 .description-card-paragraph h1 {
   padding: clamp(20px, 3vw, 50px);
+  margin-left: 50%;
 }
 
 .blue-line {
@@ -201,15 +282,22 @@ video {
   height: 40px;
 }
 
+.image-paragraph {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .dancing-image-container {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 5px;
+  gap: 0px;
   filter: brightness(70%);
 }
 
 .dancing-image-container img {
-  width: 100%;
+  max-width: 150px;
   height: auto;
 }
 
@@ -218,6 +306,45 @@ video {
 }
 
 @media (max-width: 768px) {
+  .description-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first-image img,
+  .second-image img {
+    max-width: 100%;
+  }
+
+  .image-paragraph {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-card-paragraph {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .dancing-image-container {
+    justify-content: center;
+  }
+
+  .dancing-image-container img {
+    max-width: 100%;
+  }
+
+  .vision-container,
+  .mission-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vision-container h1,
+  .mission-container h1 {
+    margin-bottom: 10px;
+  }
+
   .about-us {
     flex-direction: column;
     text-align: center;
