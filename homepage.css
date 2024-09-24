@@ -26,8 +26,7 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin-top: 100px;
   font-family: "Arial", sans-serif;
 }
 
@@ -126,23 +125,55 @@ video {
 }
 
 .hero-section p {
-  font-size: clamp(14px, 2vw, 20px); /* Responsive text */
+  font-size: clamp(10px, 2vw, 27px); /* Responsive text */
   padding-top: 20px;
   font-style: italic;
   text-align: left;
 }
 
 .hero-section h6 {
-  font-size: clamp(20px, 5vw, 30px); /* Responsive subheading */
+  font-size: clamp(19.5px, 4vw, 52px); /* Responsive subheading */
   color: var(--color-aqua-blue);
   font-weight: 1000;
 }
+.our-programs {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+  position: relative;
+  width: 100%; /* Full width of the container */
+  max-width: 1200px; /* Set a maximum width for desktop viewing */
+  margin: 0 auto; /* Center the container */
+  color: var(--color-white);
+  transition: transform 0.3s ease;
+  padding: clamp(20px, 4vw, 20px); /* Responsive padding for top and bottom */
+  padding-left: clamp(
+    40px,
+    10vw,
+    60px
+  ); /* Increased left padding for better centering */
+  padding-right: clamp(
+    40px,
+    10vw,
+    60px
+  ); /* Increased right padding for better centering */
+}
+
+.our-programs p {
+  text-align: justify; /* Justify text for paragraph */
+  padding: clamp(20px, 3vw, 50px); /* Responsive padding for paragraphs */
+  font-size: clamp(14px, 2vw, 20px); /* Responsive text size */
+  max-width: 800px; /* Set a max width for paragraph text */
+  margin: 0 auto; /* Center the paragraph text */
+}
 
 .description-card {
+  justify-content: center;
+
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 20px;
   gap: 20px;
   align-items: center;
@@ -162,8 +193,9 @@ video {
 .our-vision-mission {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  padding-bottom: 20px;
   margin-left: 6.5%;
+  gap: 20px;
 }
 
 .vision-container p {
@@ -175,7 +207,7 @@ video {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .vision-container h1,
@@ -204,7 +236,7 @@ video {
 
 .description-card-paragraph {
   flex: 1;
-  max-width: 500px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,7 +264,7 @@ video {
 
 .description-card-paragraph h1 {
   padding: clamp(20px, 3vw, 50px);
-  margin-left: 50%;
+  /* margin-left: 50%; */
 }
 
 .blue-line {
@@ -242,6 +274,10 @@ video {
 }
 
 .addresses {
+  padding-left: clamp(10px, 2vw, 20px);
+  gap: 15px;
+  flex-direction: column;
+  display: flex;
   padding: clamp(10px, 2vw, 20px);
   font-size: clamp(12px, 2vw, 15px); /* Responsive font */
 }
@@ -262,17 +298,25 @@ video {
 }
 
 .useful-links {
-  margin-left: 50%;
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: row;*/
+  margin-right: 50%;
 }
 
 .contact-us-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
 .social-media-container {
+  margin-top: 5px;
   left: 0;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
 }
 
@@ -311,6 +355,11 @@ video {
     align-items: center;
   }
 
+  .our-programs {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
   .first-image img,
   .second-image img {
     max-width: 100%;
@@ -330,7 +379,7 @@ video {
     justify-content: center;
   }
 
-  .dancing-image-container img {
+  .dancing -image-container img {
     max-width: 100%;
   }
 
@@ -338,11 +387,6 @@ video {
   .mission-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .vision-container h1,
-  .mission-container h1 {
-    margin-bottom: 10px;
   }
 
   .about-us {

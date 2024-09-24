@@ -292,6 +292,10 @@ h3 {
   color: var(--color-white);
   padding: 40px;
 }
+.footer-left,
+.footer-right {
+  flex: 1;
+}
 
 .footer-right {
   margin-left: 0%;
@@ -306,7 +310,8 @@ h3 {
 
 .addresses label {
   padding-bottom: 10px;
-  margin-left: 100px;
+  margin-left: 0;
+  text-align: center;
 }
 
 .links h3 {
@@ -334,6 +339,12 @@ li {
 
 .useful-links h2 {
   padding-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .our-programs {
+    padding: 10px; /* Adjust padding for very small screens */
+  }
 }
 
 @media (max-width: 768px) {
@@ -370,11 +381,25 @@ li {
   .footer-links {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-bottom: 20px; /* Add some spacing between sections */
   }
 
   .useful-links {
-    margin-left: column;
+    margin-left: 0;
+  }
+
+  .useful-links h2 {
     text-align: center;
+  }
+
+  useful-links li {
+    font-size: clamp(14px, 3vw, 16px); /* Make the links text responsive */
+    margin-bottom: 10px;
   }
 
   .nav-links {
@@ -390,5 +415,28 @@ li {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .links ul {
+    padding-left: 0; /* Remove extra padding */
+    text-align: center; /* Center the list items */
+  }
+
+  .links li {
+    padding: 10px 0; /* Ensure padding is consistent for smaller screens */
+  }
+}
+
+/* Larger screens maintain the original layout */
+@media (min-width: 769px) {
+  .footer-links {
+    flex-direction: row; /* Keep links side-by-side for larger screens */
+    justify-content: space-between;
+  }
+
+  .useful-links {
+    flex-direction: column;
+    text-align: left; /* Left align on larger screens */
+    padding-left: 0;
   }
 }
