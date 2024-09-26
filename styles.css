@@ -97,17 +97,20 @@ h3 {
 }
 
 .dropdown-content {
-  padding-top: 10px;
+  margin-top: 5px;
+  margin-left: 35px;
+  padding-bottom: 10px;
+  min-width: 220px;
   display: none;
   position: absolute;
   background-color: #138b91;
-  min-width: 160px;
   z-index: 1001;
 }
 
 .dropdown-content a {
   color: var(--color-white);
-  padding: 10px;
+  padding-top: 20px;
+  padding: 10px auto;
   text-decoration: none;
   display: block;
   z-index: 1001;
@@ -328,6 +331,10 @@ h3 {
   display: inline;
   flex-direction: column;
   align-items: center;
+}
+
+.useful-links a :hover {
+  color: yellow;
 }
 
 .addresses label {
