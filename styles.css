@@ -49,9 +49,13 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 /* Navbar Styles */
 .logo {
-  width: clamp(120px, 15vw, 190px);
+  width: clamp(200px, 20vw, 250px);
   height: auto;
 }
 
@@ -96,13 +100,13 @@ h3 {
   padding-top: 10px;
   display: none;
   position: absolute;
-  background-color: rgb(218, 218, 218);
+  background-color: #138b91;
   min-width: 160px;
   z-index: 1001;
 }
 
 .dropdown-content a {
-  color: var(--color-black);
+  color: var(--color-white);
   padding: 10px;
   text-decoration: none;
   display: block;
@@ -110,8 +114,10 @@ h3 {
 }
 
 .dropdown-content a:hover {
-  background-color: rgb(218, 218, 218);
+  background-color: #138b91;
+  color: yellow;
   z-index: 1001;
+  transition: 0.3s;
 }
 
 .nav-dropdown:hover .dropdown-content {
@@ -135,6 +141,22 @@ h3 {
 .navbar a.active::before,
 .navbar a:hover::before {
   width: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  font-weight: 500;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: yellow;
 }
 
 /* Cover Section Styles */
@@ -339,104 +361,4 @@ li {
 
 .useful-links h2 {
   padding-bottom: 10px;
-}
-
-@media (max-width: 480px) {
-  .our-programs {
-    padding: 10px; /* Adjust padding for very small screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    cursor: pointer; /* Adjust this to your color scheme */
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .description-card-paragraph,
-  .about-us-des {
-    margin: 0;
-    padding: 20px;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .program-image,
-  .about-us-des {
-    margin-left: 0;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-left,
-  .footer-right {
-    margin-bottom: 20px; /* Add some spacing between sections */
-  }
-
-  .useful-links {
-    margin-left: 0;
-  }
-
-  .useful-links h2 {
-    text-align: center;
-  }
-
-  useful-links li {
-    font-size: clamp(14px, 3vw, 16px); /* Make the links text responsive */
-    margin-bottom: 10px;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: white;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .links ul {
-    padding-left: 0; /* Remove extra padding */
-    text-align: center; /* Center the list items */
-  }
-
-  .links li {
-    padding: 10px 0; /* Ensure padding is consistent for smaller screens */
-  }
-}
-
-/* Larger screens maintain the original layout */
-@media (min-width: 769px) {
-  .footer-links {
-    flex-direction: row; /* Keep links side-by-side for larger screens */
-    justify-content: space-between;
-  }
-
-  .useful-links {
-    flex-direction: column;
-    text-align: left; /* Left align on larger screens */
-    padding-left: 0;
-  }
 }

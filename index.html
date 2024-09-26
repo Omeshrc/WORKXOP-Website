@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="button.css" />
     <link rel="stylesheet" href="homepage.css" />
-    <script defer src="main.js"></script>
+
     <title>Homepage</title>
     <link rel="icon" href="assets/logos/title-icon.png" type="image/png" />
   </head>
@@ -20,8 +20,25 @@
         />
       </a>
 
-      <nav class="navbar">
-        <a href="index.html">Home</a>
+      <!-- For the hamburger menu -->
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="ourworkshops.html" class="nav-link">Our Workxops</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="contactus.html" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+      <!-- For the hamburger menu -->
+
+      <nav id="navbar" class="navbar">
+        <a href="index.html" class="active">Home</a>
+
         <div class="nav-dropdown">
           <h3>
             <a href="ourworkshops.html">
@@ -30,27 +47,29 @@
             </a>
           </h3>
           <div class="dropdown-content">
-            <a href="ourworkshops.html#social-dancing-for-absolute-beginners"
-              >Social Dancing for Absolute Beginners</a
-            >
-            <a href="ourworkshops.html#paint-your-lagoon">Paint The Lagoon</a>
+            <a href="ourworkshops.html#social-dancing-for-absolute-beginners">
+              Social Dancing for Absolute Beginners
+            </a>
             <a href="ourworkshops.html#paint-your-ocean">Paint Your Ocean</a>
-            <a href="ourworkshops.html#shanthikarma">Shanthikarma</a>
-            <a href="ourworkshops.html#culinary-journey">Culinary Journey</a>
+            <a href="ourworkshops.html#paint-your-lagoon">Paint The Lagoon</a>
             <a href="ourworkshops.html#poetry-night">Poetry Night</a>
-            <a href="ourworkshops.html#jazz-nights">Sri Lanka Jazz Nights</a>
-            <a href="ourworkshops.html#performance-arts">Performance Arts</a>
-            <a href="ourworkshops.html#toddy-tour">Toddy tour</a>
-            <a href="ourworkshops.html#architectural-walk"
-              >Architectural Walk</a
-            >
-            <a href="ourworkshops.html#city-tour">Negombo City Tour</a>
+            <a href="ourworkshops.html#culinary-journey">Culinary Journey</a>
+            <a href="ourworkshops.html#shanthikarma">Shanthikarma</a>
             <a href="ourworkshops.html#puppetry">Puppetry in Sri Lanka</a>
+            <a href="ourworkshops.html#performance-arts">Performance Arts</a>
+            <a href="ourworkshops.html#toddy-tour">Toddy Tour</a>
+            <a href="ourworkshops.html#architectural-walk">
+              Architectural Walk
+            </a>
           </div>
         </div>
         <a href="contactus.html">Contact Us</a>
       </nav>
-      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+      <div class="hamburger" onclick="toggleNavbar()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </header>
 
     <div class="image-container">
@@ -315,5 +334,6 @@
         >
       </footer>
     </div>
+    <script defer src="main.js"></script>
   </body>
 </html>

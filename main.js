@@ -1,19 +1,21 @@
 let lastScrollPos = 0;
 const header = document.querySelector(".header");
-
-// Function to toggle the navbar
-function toggleNavbar() {
-  const navLinks = document.querySelector(".nav-links"); // Targeting nav-links instead of navbar
-  const hamburger = document.querySelector(".hamburger");
-  navLinks.classList.toggle("active");
-  hamburger.classList.toggle("active");
-}
-
-// Ensure the hamburger element exists before adding the event listener
 const hamburger = document.querySelector(".hamburger");
-if (hamburger) {
-  hamburger.addEventListener("click", toggleNavbar);
-}
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".hamburger").addEventListener("click", toggleNavbar);
+
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
 
 // Function to handle scroll behavior
 window.addEventListener("scroll", () => {
