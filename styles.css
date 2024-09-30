@@ -93,11 +93,11 @@ h3 {
 }
 
 .dropdown-content a {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(14px, 1.5vw, 16.5px);
 }
 
 .dropdown-content {
-  margin-top: 5px;
+  margin-top: -1px;
   margin-left: 35px;
   padding-bottom: 10px;
   min-width: 220px;
