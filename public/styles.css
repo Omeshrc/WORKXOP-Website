@@ -1,0 +1,408 @@
+@import url("https://fonts.cdnfonts.com/css/franklin-gothic");
+
+:root {
+  --color-phthalo-blue: rgb(0, 13, 129);
+  --color-lavender: rgb(210, 218, 239);
+  --color-night: rgb(18, 19, 15);
+  --color-powder-blue: rgb(164, 194, 223);
+  --color-white: rgba(255, 255, 255, 0.969);
+  --color-aqua-blue: #5bc5d2;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dark-gray: #333333;
+  --color-orange: #f28e1a;
+  --color-bright-green: #a3ed29;
+  --color-yellow: #e3b70a;
+  --color-neon-yellow: #fbff2e;
+  --color-hot-pink: #ff1d9c;
+  --color-midnight-blue: #3a3e4e;
+  --color-peach: #ffab48;
+  --color-slate-gray: #575b70;
+  --color-dark-teal: #003e58;
+  --color-cave-water-blue: #002637;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Book", "Arial", "Helvetica", sans-serif;
+}
+
+/* Header Styles */
+h1 {
+  font-weight: lighter;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  left: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.naviheader {
+  position: fixed;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: clamp(10px, 3vw, 20px) clamp(20px, 5vw, 50px);
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: #005559;
+  color: white;
+  font-weight: bold;
+}
+
+.naviheader .header-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.naviheader img {
+  width: 30px;
+  height: 30px;
+}
+
+.naviheader .header-nav-link:hover {
+  color: #ffc400;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+/* Navbar Styles */
+.logo {
+  width: clamp(200px, 20vw, 250px);
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: clamp(10px, 5vw, 20px) clamp(20px, 5vw, 50px); /* Scales with viewport */
+  gap: clamp(10px, 2vw, 30px); /* Responsive gap */
+}
+
+.navbar a,
+h3 {
+  z-index: 1000;
+  position: relative;
+  text-align: left;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--color-night);
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: clamp(10px, 2vw, 30px);
+}
+
+.navbar img {
+  width: auto;
+  height: clamp(10px, 2vw, 15px);
+}
+
+/* Dropdown Styles */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.dropdown-content {
+  margin-top: 5px;
+  margin-left: 35px;
+  padding-bottom: 10px;
+  min-width: 220px;
+  display: none;
+  position: absolute;
+  background-color: #138b91;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  color: var(--color-white);
+  padding-top: 20px;
+  padding: 10px auto;
+  text-decoration: none;
+  display: block;
+  z-index: 1001;
+}
+
+.dropdown-content a:hover {
+  background-color: #138b91;
+  color: pink;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 1001;
+}
+
+.navbar a::before {
+  z-index: 1000;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  border-radius: 5px;
+  background-color: var(--color-aqua-blue);
+  transition: 0.3s;
+}
+
+.navbar a.active::before,
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  font-weight: 500;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: yellow;
+}
+
+/* Cover Section Styles */
+.cover {
+  position: relative;
+  width: 100%;
+}
+
+.cover-image {
+  width: 100%;
+}
+
+.cover-text {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  text-align: left;
+}
+
+.cover-title {
+  font-size: clamp(40px, 8vw, 78px);
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  text-align: left;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  z-index: 2; /* Ensures the text is on top of the image */
+}
+
+.text-overlay h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.text-overlay p {
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Responsive font size */
+  line-height: 1.5;
+}
+
+.text-overlay span.blue {
+  color: var(--color-aqua-blue); /* Matches your aqua-blue variable */
+}
+
+.text-overlay span.pink {
+  color: var(--color-hot-pink); /* Matches your hot-pink variable */
+}
+
+.text-overlay span.orange {
+  color: var(--color-orange); /* Matches your orange variable */
+}
+
+/* Button Styles */
+.button {
+  color: var(--color-white);
+  padding: 10px 20px;
+  background-color: var(--color-phthalo-blue);
+  border: none;
+  font-size: clamp(14px, 1.5vw, 18px);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-powder-blue);
+  color: var(--color-night);
+  transition: 0.3s;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+/* Image Container Styles */
+.image-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Styles */
+.card {
+  margin: clamp(15px, 4vw, 30px); /* Responsive margin */
+  width: auto;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: clamp(24px, 4vw, 36px);
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: clamp(14px, 2vw, 18px);
+  color: rgb(119, 119, 119);
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer Styles */
+
+.developer-bar-footer {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-cave-water-blue);
+  color: var(--color-white);
+  padding: clamp(10px, 2vw, 20px); /* Responsive padding */
+  font-size: clamp(12px, 2vw, 15px); /* Responsive font */
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.footer-developer-link:hover {
+  text-decoration: underline;
+  color: var(--color-yellow);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  background-color: var(--color-dark-teal);
+  color: var(--color-white);
+  padding: 40px;
+}
+.footer-left,
+.footer-right {
+  flex: 1;
+}
+
+.footer-right {
+  margin-left: 0%;
+  top: 0%;
+}
+
+.useful-links {
+  display: inline;
+  flex-direction: column;
+  align-items: center;
+}
+
+.useful-links a :hover {
+  color: yellow;
+}
+
+.addresses label {
+  padding-bottom: 10px;
+  margin-left: 0;
+  text-align: center;
+}
+
+.links h3 {
+  color: white;
+  padding-bottom: 10px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.links li {
+  margin-bottom: 10px;
+  padding: 100px;
+}
+
+.useful-links ol,
+li {
+  padding-bottom: 10px;
+  font-size: 18px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.useful-links h2 {
+  padding-bottom: 10px;
+}
